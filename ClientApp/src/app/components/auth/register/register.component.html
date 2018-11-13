@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="h2 mt-3">Registration</h2>
+  <div class="row">
+    <div class="col-4">
+      <label for="name" class="control-label mt-2">Name:</label>
+      <input id="name" type="text" class="form-control" [(ngModel)]="form.Name">
+
+      <label for="lastName" class="control-label mt-2">Last Name:</label>
+      <input id="lastName" type="text" class="form-control" [(ngModel)]="form.LastName">
+
+      <label for="email" class="control-label mt-2">Email:</label>
+      <input id="email" type="text" class="form-control" [(ngModel)]="form.Email">
+
+      <label for="password" class="control-label mt-2">Password:</label>
+      <input id="password" type="password" class="form-control" [(ngModel)]="form.Password">
+
+      <label for="confirm_password" class="control-label mt-2">Repeat password:</label>
+      <input id="confirm_password" type="password" class="form-control" [(ngModel)]="form.ConfirmPassword">
+
+      <button class="btn btn-primary mt-2" (click)="save()">Submit</button>
+    </div>
+  </div>
+</div>

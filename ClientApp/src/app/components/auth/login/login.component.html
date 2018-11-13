@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 class="h2">Login</h2>
+  <div class="row">
+    <div class="col-4">
+      <label for="name" class="control-label mt-2">Email:</label>
+      <input id="name" type="text" class="form-control" [(ngModel)]="user.Name">
+
+      <label for="lastName" class="control-label mt-2">Password:</label>
+      <input id="lastName" type="text" class="form-control" [(ngModel)]="user.LastName">
+
+      <button class="btn btn-primary mt-2" (click)="login()">Submit</button>
+    </div>
+  </div>
+</div>
