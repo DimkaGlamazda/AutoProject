@@ -7,8 +7,7 @@ namespace Auto.Application
 {
     public class UserService
     {
-        private UserRepository _repository 
-            = new UserRepository();
+        private Repository.Repository _repository = new UserRepository("1111");
 
         public void Add(ContractUser user)
         {

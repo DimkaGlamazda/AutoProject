@@ -7,12 +7,17 @@ using SqlUser = Auto.Sql.User;
 
 namespace Auto.Repository
 {
-    public class UserRepository
+    public class UserRepository : Repository
     {
+        public UserRepository(string connectionStr): base(connectionStr) {}
+
+
         private const string _userTableStr = "[Auto].[dbo].[User]";
+
 
         private const string ConnectionStr 
             = "Data Source=DIMA\\SQLEXPRESS;Initial Catalog=Auto;Integrated Security=true;";
+
 
         public void Add(DomainUser user)
         {
