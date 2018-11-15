@@ -1,4 +1,5 @@
-﻿using Auto.Mapper;
+﻿using Auto.Domain;
+using Auto.Mapper;
 using Dapper;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,25 +16,21 @@ namespace Auto.Repository
         private const string _userTableStr = "[Auto].[dbo].[User]";
 
 
-        private const string ConnectionStr 
-            = "Data Source=DIMA\\SQLEXPRESS;Initial Catalog=Auto;Integrated Security=true;";
 
-
-        public void Add(DomainUser user)
+        public override void Create(DomainUser domain)
         {
-            SqlUser _user = user.ToSql();
+            SqlUser _user = domain.ToSql();
 
-            string queryStr = 
+            string queryStr =
                 $"INSERT INTO {_userTableStr}" +
                 $" (Name, LastName, Email, Password, Type) VALUES" +
-                $" ('{_user.Name.ToString()}', '{user.LastName.ToString()}', '{user.Email.ToString()}'," +
-                $" '{user.Password.ToString()}', {user.Type})";
+                $" ('{_user.Name.ToString()}', '{domain.LastName.ToString()}', '{domain.Email.ToString()}'," +
+                $" '{domain.Password.ToString()}', {domain.Type})";
 
-            using (var con = new SqlConnection(ConnectionStr))
+            using (var con = new SqlConnection(connectionString))
             {
                 con.Query(queryStr).FirstOrDefault();
             }
         }
-
     }
 }

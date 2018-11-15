@@ -17,10 +17,10 @@ export class UsersService {
     this.http.post(this.registerUrl, user)
       .subscribe(
       data => {
-        //alert('ok');
+        alert('ok');
       },
       error => {
-        ///console.log(error);
+        console.log(error);
       });
   }
 }

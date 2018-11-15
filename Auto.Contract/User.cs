@@ -1,6 +1,6 @@
 ﻿namespace Auto.Contract
 {
-    public class User
+    public class User : IContract
     {
         public int Id { get; set; }
 

@@ -7,13 +7,14 @@ namespace Auto.Application
 {
     public class UserService
     {
-        private Repository.Repository _repository = new UserRepository("1111");
+        private Repository.Repository _repository = 
+            new Repository.UserRepository("Data Source = DIMA\\SQLEXPRESS; Initial Catalog = Auto; Integrated Security = true;");
 
         public void Add(ContractUser user)
         {
             DomainUser domainUser = user.ToDomain();
             domainUser.Type = 1;
-            _repository.Add(domainUser);
+            _repository.Create(domainUser);
         }
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace Auto.Repository
+﻿using DomainUser = Auto.Domain.User;
+
+namespace Auto.Repository
 {
-    public class Repository
+    public abstract class Repository
     {
         protected string connectionString;
 
@@ -8,5 +10,7 @@
         {
             connectionString = connectionStr;
         }
+
+        public abstract void Create(DomainUser domain);
     }
 }
